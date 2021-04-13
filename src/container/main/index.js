@@ -1,22 +1,17 @@
-import React from 'react';
-import styles from './styles';
+import React from "react";
+import { connect } from "react-redux";
+import styles from "./styles";
 
 class Main extends React.Component {
-
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
 
   render() {
-  	return (
-      <div style={styles.content}>
-        主页面
-      </div>
-  	);
-  } 
-
+    return <div style={styles.content}>主页面</div>;
+  }
 }
-export default Main;
+
+const mapStateToProps = (state) => ({});
+export default connect(mapStateToProps)(Main);
