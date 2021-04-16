@@ -29,7 +29,7 @@ React app
 
 #### 生命周期
 由于自身原因并没有使用函数组件(Hooks)封装开发。
-[!github](https://yangandmore.github.io/img/ReactLifecycle/1.png)
+![github](https://yangandmore.github.io/img/ReactLifecycle/1.png)
 
 #### redux
 * action
