@@ -26,6 +26,7 @@ React app
     engine = filter(engine, ['whitelisted-key', ['main']], ['blacklisted-key', ['user', 'data']]);
     ```
 
+#### redux
 * action
     将文件添加至**redux**中，模仿**main**即可。
     > index.js:添加redux全部配置工作。
