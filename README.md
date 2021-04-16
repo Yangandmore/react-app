@@ -40,11 +40,11 @@ React app
 > index.js:添加redux全部配置工作。
 > api.js:添加redux中需要的api访问的接口。
 
-    ```
-    const mainAction = {};
-    mainAction.actionLocalTest = createAction(LOCAL_TEST, 'data');
-    mainAction.actionApiTest = createActionAsync(API_TEST, testApi);
-    ```
+```
+const mainAction = {};
+mainAction.actionLocalTest = createAction(LOCAL_TEST, 'data');
+mainAction.actionApiTest = createActionAsync(API_TEST, testApi);
+```
 
 * reducer
     action请求后的数据会到这边处理：
