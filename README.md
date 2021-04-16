@@ -13,6 +13,7 @@ React app
 * [x] eslint && prettier
 * [ ] history
 * [ ] 加密
+* [ ] 版本控制
 
 #### local storage
 
