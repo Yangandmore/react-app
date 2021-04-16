@@ -17,8 +17,8 @@ React app
 * 黑白名单配置
 
 通过数组的方式配置白名单，当需要控制的深层节点时，可以将节点增加至数组中即可。
-    * whitelisted-key:白名单
-    * blacklisted-key:黑名单
+  * whitelisted-key:白名单
+  * blacklisted-key:黑名单
 
 ```
 project/src/store.js
