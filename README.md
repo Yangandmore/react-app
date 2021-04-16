@@ -34,7 +34,7 @@ React app
 
 #### redux
 * action
-    将文件添加至**redux**中，模仿**main**即可。
+将文件添加至**redux**中，模仿**main**即可。
 > index.js:添加redux全部配置工作。
 > api.js:添加redux中需要的api访问的接口。
 
