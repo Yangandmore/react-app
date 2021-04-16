@@ -1,5 +1,5 @@
-import { combineReducers } from "redux-immutable";
-import { mainReducer } from "./redux";
+import { combineReducers } from 'redux-immutable';
+import { mainReducer } from './redux';
 
 const rootReducer = combineReducers({ main: mainReducer });
 

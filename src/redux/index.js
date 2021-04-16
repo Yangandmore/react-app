@@ -1,3 +1,3 @@
-import { mainAction, mainReducer, mainSelect } from "./main";
+import { mainAction, mainReducer, mainSelect } from './main';
 
 export { mainAction, mainReducer, mainSelect };

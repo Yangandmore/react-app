@@ -132,22 +132,8 @@ const request = ({ url, ...options }) => {
         return data;
       })
       .then((data) => {
-        if (data.status === 0) {
-          // 正确请求
-          resolve({ body: data, parameter: opts.body });
-        } else if (data.status >= 500 && data.status <= 600) {
-          let err = {
-            errcode: data.status,
-            errmsg: data.msg,
-          };
-          reject(err);
-        } else {
-          let err = {
-            errcode: data.status,
-            errmsg: data.err,
-          };
-          reject(err);
-        }
+        // TODO 需要判断网络状态
+        resolve({ body: data, parameter: opts.body });
       })
       .catch((err) => reject({ errcode: -1, errmsg: `${err}` }));
   });
