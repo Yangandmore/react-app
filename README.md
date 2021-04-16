@@ -31,7 +31,7 @@ engine = filter(engine, ['whitelisted-key', ['main']], ['blacklisted-key', ['use
 
 #### 生命周期
 由于自身原因并没有使用函数组件(Hooks)封装开发。  
-***注意：使用getDerivedStateFromProps()函数，代替componentWillReceiveProps()函数。***
+***注意：使用getDerivedStateFromProps()函数，代替componentWillReceiveProps()函数。***  
 ![github](https://yangandmore.github.io/img/ReactLifecycle/1.png)
 
 #### redux
