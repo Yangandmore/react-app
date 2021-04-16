@@ -49,3 +49,61 @@ React app
     ```
 
     处理方式分别针对**createAction**和**createActionAsync**两种action。
+    ```
+    // createAction
+    [LOCAL_TEST](state, action) {
+      return state.merge({
+        ...
+      });
+    },
+    // createAction
+    [API_TEST](state, action) {
+      return {
+        REQUEST() {
+            ...
+        },
+        SUCCESS() {
+            ...
+        },
+        FAILURE() {
+            ...
+        },
+      };
+    },
+    ```
+
+* selection
+    将数据返回的数据进行合并、拆封等操作，也有利于数据流复用后的统一管理。
+    ```
+    // 配置一级拆分
+    const select = (state) => state.get('main');
+    const mainSelect = {};
+    // 配置当前reducer下的拆分
+    mainSelect.dataSelect = createSelector(select, (state) => {
+      return state.get('data');
+    });
+    ```
+    完成后在**container**中使用。
+    ```
+    const mapStateToProps = (state) => ({
+      data: mainSelect.dataSelect(state),
+    });
+    export default connect(mapStateToProps)(Main);
+    ```
+* dispatch
+    完成上述配置后即可使用
+    ```
+    import { connect } from 'react-redux';
+    ...
+
+    this.props.dispatch(mainAction.actionXXX(...));
+
+    ...
+
+    const mapStateToProps = (state) => ({
+      data: mainSelect.dataSelect(state),
+    });
+    export default connect(mapStateToProps)(Main);
+    ```
+
+
