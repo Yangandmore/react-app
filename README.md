@@ -1,6 +1,6 @@
 React app
 ---
-小型框架
+自用react小型框架，添加记录与使用心得方便后续查看。
 
 ## 技术加入
 * [x] es6
@@ -29,6 +29,7 @@ React app
 
 #### 生命周期
 由于自身原因并没有使用函数组件(Hooks)封装开发。
+***注意：使用getDerivedStateFromProps()函数，代替componentWillReceiveProps()函数。***
 ![github](https://yangandmore.github.io/img/ReactLifecycle/1.png)
 
 #### redux
@@ -110,5 +111,9 @@ React app
     });
     export default connect(mapStateToProps)(Main);
     ```
-
+* 关于Props、State、Redux三种在项目下的抉择使用
+    > 1.State更趋向于当前组件下的本身的状态。
+    > 2.此处的Props分为两个部分：父组件传递数据和Redux中返回的状态。因此在使用的时候需要合理区分。
+    > 3.区分的方案:是否牵扯到当前组件的数据相关性的props建议从**getDerivedStateFromProps()**函数中将其转换为State来使用。1.数据相关性更接近UI数据，方便本地state管理；2.反向考虑更没有接近UI数据，减少本地state的数据量，这些数据从props中获取提高数据类型隔离。
+    > 4.redux是否真的需要？并不是所有的组件都需要他，react自身的状态管理能够满足组件之间的交互。更将他接近与项目数据管理库。
 
