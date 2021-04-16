@@ -12,6 +12,7 @@ React app
 * [x] fetch
 * [x] eslint && prettier
 * [ ] history
+* [ ] 加密
 
 #### local storage
 
