@@ -3,6 +3,7 @@ React app
 小型框架
 
 ## 技术加入
+* [x] es6
 * [x] react
 * [x] redux
 * [x] redux-storage
@@ -25,6 +26,10 @@ React app
     // 多层数组表示嵌套
     engine = filter(engine, ['whitelisted-key', ['main']], ['blacklisted-key', ['user', 'data']]);
     ```
+
+#### 生命周期
+由于自身原因并没有使用函数组件(Hooks)封装开发。
+[!github](https://yangandmore.github.io/img/ReactLifecycle/1.png)
 
 #### redux
 * action
