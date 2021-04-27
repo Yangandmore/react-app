@@ -16,7 +16,6 @@ class Main extends React.Component {
   }
 
   apiTest = () => {
-    console.log('-----');
     this.props.dispatch(mainAction.actionApiTest());
   };
 
