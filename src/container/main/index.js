@@ -31,13 +31,15 @@ class Main extends React.Component {
         <button
           onClick={() => {
             this.apiTest();
-          }}>
+          }}
+        >
           网络接口请求
         </button>
         <button
           onClick={() => {
             this.localTest();
-          }}>
+          }}
+        >
           本地redux
         </button>
       </div>

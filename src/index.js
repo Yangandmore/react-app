@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { Provider } from 'react-redux';
 import App from './routers';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './store';
-import { Provider } from 'react-redux';
 
 const store = configureStore();
 

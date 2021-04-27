@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware } from 'redux';
 import { fromJS } from 'immutable';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers';
 import * as storage from 'redux-storage';
 import merger from 'redux-storage-merger-immutablejs';
 import createEngine from 'redux-storage-engine-localstorage';
 import filter from 'redux-storage-decorator-filter';
+import rootReducer from './reducers';
 
 let engine = createEngine('data');
 
@@ -15,9 +15,8 @@ let engine = createEngine('data');
 engine = filter(engine, ['whitelisted-key', ['main']], ['blacklisted-key', []]);
 
 const configureStore = (initialState = fromJS({})) => {
-  const composeEnhancers =
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__();
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    || window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__();
 
   const reducer = storage.reducer(rootReducer, merger);
   const middleware = storage.createMiddleware(engine);

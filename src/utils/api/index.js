@@ -9,7 +9,7 @@ const responseError = (res) => {
     errcode: -1,
   };
   if (typeof res === 'string') {
-    result = Object.assign({}, result, { errmsg: res });
+    result = { ...result, errmsg: res };
   }
   if (typeof res === 'object') {
     result = {

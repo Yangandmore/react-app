@@ -1,0 +1,58 @@
+{
+   "extends": "airbnb",
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "import"
+    ],
+    "rules": {
+        "comma-dangle": ["warn", "only-multiline"],
+        "indent": [2, 2, {"SwitchCase": 1}],
+        "no-console": 0,
+        "no-alert": 0,
+        "global-require": 0,
+        "react/wrap-multilines": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/forbid-prop-types": 0,
+        "object-shorthand": [2, "always", { "avoidQuotes": false }],
+        "import/no-extraneous-dependencies": 0,
+        "react/no-array-index-key": 0,
+        "prefer-destructuring": 0,
+        "function-paren-newline": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/no-noninteractive-element-interactions": 0,
+        "max-len": [2, 200],
+        "class-methods-use-this": 0,
+        "object-curly-newline": 0,
+        "jsx-a11y/label-has-for": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "prefer-promise-reject-errors": 0,
+        "linebreak-style": "off",
+        "import/prefer-default-export": 0,
+        "react/static-property-placement": 0,
+        "react/no-unused-prop-types": 1,
+        "react/destructuring-assignment": 0,
+        "react/button-has-type": 1,
+        "no-unused-vars": 1,
+        "no-restricted-syntax": 1,
+        "no-case-declarations": 1,
+        "guard-for-in": 1,
+        "react/react-in-jsx-scope": 0,
+    },
+    "globals": {
+      "window": true
+    }
+}

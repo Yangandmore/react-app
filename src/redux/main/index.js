@@ -50,8 +50,6 @@ const mainReducer = createReducer(
 
 const select = (state) => state.get('main');
 const mainSelect = {};
-mainSelect.dataSelect = createSelector(select, (state) => {
-  return state.get('data');
-});
+mainSelect.dataSelect = createSelector(select, (state) => state.get('data'));
 
 export { mainAction, mainReducer, mainSelect };

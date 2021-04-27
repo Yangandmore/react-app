@@ -21,7 +21,7 @@ const makeOptions = (url, options) => {
   } else {
     thisoptions.url = url;
   }
-  thisoptions = Object.assign({}, defaultoptions, thisoptions);
+  thisoptions = { ...defaultoptions, ...thisoptions };
 
   return thisoptions;
 };
@@ -53,14 +53,13 @@ const addQs = (url, qs) => {
 };
 
 //
-const parseJSON = (response) =>
-  response.text().then((text) => {
-    let rtn = {};
-    if (text) {
-      rtn = JSON.parse(text);
-    }
-    return rtn;
-  });
+const parseJSON = (response) => response.text().then((text) => {
+  let rtn = {};
+  if (text) {
+    rtn = JSON.parse(text);
+  }
+  return rtn;
+});
 
 // 网络请求
 const request = ({ url, ...options }) => {
@@ -74,15 +73,13 @@ const request = ({ url, ...options }) => {
     case 'json':
       body = JSON.stringify(body);
       if (method.toLowerCase() === 'post' || method.toLowerCase() === 'put') {
-        headers = Object.assign({}, headers, {
-          'Content-Type': 'application/json',
-        });
+        headers = { ...headers, 'Content-Type': 'application/json' };
       }
       break;
     case 'form':
       // 数据封装成fromData
-      let formData = new FormData();
-      for (var key in body) {
+      const formData = new FormData();
+      for (const key in body) {
         formData.append(key, body[key]);
       }
       body = formData;
@@ -92,7 +89,6 @@ const request = ({ url, ...options }) => {
 
   return new Promise((resolve, reject) => {
     let res = {};
-    /* global fetch:false */
     fetch(requestUrl, {
       method,
       headers,
