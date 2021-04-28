@@ -51,6 +51,8 @@
         "no-case-declarations": 1,
         "guard-for-in": 1,
         "react/react-in-jsx-scope": 0,
+        "react/no-unused-state": 1,
+        "react/no-deprecated": 1
     },
     "globals": {
       "window": true

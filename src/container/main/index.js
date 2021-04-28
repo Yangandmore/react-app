@@ -15,6 +15,12 @@ class Main extends React.Component {
     this.state = {};
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const res = {};
+    console.log('----->');
+    return res;
+  }
+
   apiTest = () => {
     this.props.dispatch(mainAction.actionApiTest());
   };
