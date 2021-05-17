@@ -14,6 +14,7 @@ React app
 * [ ] history
 * [ ] 加密
 * [ ] 版本控制
+* [x] 刷新控制
 
 #### local storage
 

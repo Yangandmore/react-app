@@ -14,6 +14,11 @@ let engine = createEngine('data');
 // 多层数组表示嵌套
 engine = filter(engine, ['whitelisted-key', ['main']], ['blacklisted-key', []]);
 
+const getLocalState = () => engine.load()
+  .then((state) => state)
+  .catch(() => ({}));
+
+// 默认使用空数据初始化
 const configureStore = (initialState = fromJS({})) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     || window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__();
@@ -26,16 +31,14 @@ const configureStore = (initialState = fromJS({})) => {
     composeEnhancers(applyMiddleware(thunk, middleware)),
   );
 
-  // 加载localstorage中数据
-  const load = storage.createLoader(engine);
-  load(store);
-
   return store;
 };
 
-const getLoad = async (store) => {
-  const load = storage.createLoader(engine);
-  await load(store);
+// 启动时根据localStorage中数据初始化state
+const configureLocalStateStore = async () => {
+  const state = await getLocalState();
+  const store = configureStore(fromJS(state));
+  return store;
 };
 
-export default configureStore;
+export { configureStore, configureLocalStateStore };

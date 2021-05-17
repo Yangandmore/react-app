@@ -4,15 +4,19 @@ import './index.css';
 import { Provider } from 'react-redux';
 import App from './routers';
 import reportWebVitals from './reportWebVitals';
-import configureStore from './store';
+import { configureLocalStateStore } from './store';
 
-const store = configureStore();
+const app = async () => {
+  const store = await configureLocalStateStore();
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>{App()}</Provider>
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+  ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>{App()}</Provider>
+    </React.StrictMode>,
+    document.getElementById('root'),
+  );
 
-reportWebVitals();
+  reportWebVitals();
+};
+
+app();
